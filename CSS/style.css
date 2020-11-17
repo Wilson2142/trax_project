@@ -541,8 +541,7 @@ header {
     align-items: center;
 }
 
-/* #hero */
-.owl-dots {
+#hero .owl-dots {
     text-align: center;
     position: absolute;
     width: 100vw;
@@ -550,8 +549,7 @@ header {
     bottom: 20px;
 }
 
-/* #hero */
-.owl-dot {
+#hero .owl-dot {
     position: relative;
     width: 10px;
     height: 5px;
@@ -563,14 +561,12 @@ header {
     background: rgba(255, 255, 255, .3);
 }
 
-/* #hero */
-.owl-dot:hover {
+#hero.owl-dot:hover {
     background-color: #24cdd5;
     border: 1px solid rgba(255, 255, 255, .07);
 }
 
-/* #hero */
-.owl-dot:focus {
+#hero .owl-dot:focus {
     background-color: #24cdd5;
     border: 2px solid #fff;
 }
