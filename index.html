@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- TODO:
+     General button osztályok bevezetése
+                Reszponzív betűméret a h2,3,4-re és a p-re meg talán a ?htmlre? revampolása
+                kávé megivása
+                media q-k becsoportosítása a végére
+                JS function script fájlba a jquery funkció hívásokat 
+                szekciókommentek átnézegetése
+                //grid befejezése, ikonok rávezetése, jelenleg törik 576 fölött
+                a kis körös képes geci sliderében a nyilakat rendbetenni
+                képek becserélése
+                //menüelemek belinkelése,
+                hover statek és imghoverstatek
+                //slider a herora, multilayer animations
+                Végre eldönteni hogy camelCase vagy _ vagy -
+                Contact US 768ba 4 soros, jelenleg törik,
+                paddingok finomhangolása
+                side menu disappear klattyolás után
+                side menü X gomb pozíció rendbetétel
+                //counters doboz távolságtartás, mobilon csúnya jelenleg
+                a wow animációk végigvezetése
+                gombok hoverje
+                //kávéscsészés section mobilon csúnya, valószínű a text betűmérete töri meg
+                work ::after,::before fehér csíkok a kis körök között, animálva
+                a mobilnézet az iphone képben, a slider működik ha fel van z-indexelve, de kilóg, 
+                a pricingon nincs hover, kis piros geci a sarokban, gombot rálinkelni, negyedik "ultimate doboz"
+                //gallery képváltó linkelése és animálása
+                video szekció play gomb így ortó, nincs rendes reszponzív padding a texten
+                //footer.... 
+                sidemenü iconok hoverje
+                csillagok színe narancsárgára
+
+
+                -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Own Project Work - Based on Trax(One Page Layout)</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Open+Sans:wght@300;400;600;700&display=swap">
+
+    <!---- Page Styling  ---->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!---- Owl Carousel ---->
+    <link rel="stylesheet" href="CSS/owl.carousel.css">
+    <link rel="stylesheet" href="CSS/owl.theme.default.min.css">
+    <link rel="stylesheet" href="CSS/animate.css">
+    <link rel="stylesheet" href="CSS/cubeportfolio.css">
+    <link rel="stylesheet" href="CSS/jquery.fancybox.min.css">
+
+</head>
+
+<body>
+
+
+    <body>
+        <header>
+            <!-- Navbar Starts -->
+            <nav class="navMain">
+                <a class="logo" href="index.html"><img src="img/logo-transparent.png" alt="company logo"></a>
+                <ul class="mainMenu">
+                    <li><a class="links" href="#hero">Home</a></li>
+                    <li><a class="links" href="#business">About</a></li>
+                    <li><a class="links" href="#service">Service</a></li>
+                    <li><a class="links" href="#team">Team</a></li>
+                    <li><a class="links" href="#pricing">Pricing</a></li>
+                    <li><a class="links" href="#gallery">Gallery</a></li>
+                    <li><a class="links" href="#testimonial">Testimonial</a></li>
+                    <li><a class="links" href="#blog">Blog</a></li>
+                    <li><a class="links" href="#contact">Contact</a></li>
+                </ul>
+                <button class="sidebarBtn" onclick="open_menu()"><i class="fas fa-bars"></i></button>
+            </nav>
+            <!-- Navbar Ends -->
+            <!-- Sidebar Starts -->
+            <div class="sideMenu">
+                <div class="sidebar_wrapper">
+                    <button class="sidebar_closeBtn" onclick="close_menu()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <nav class="sideNav">
+                        <ul>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="200ms"><a href="#hero">Home</a></li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="300ms"><a href="#business">About</a>
+                            </li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="400ms"><a href="#service">Service</a>
+                            </li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="500ms"><a href="#team">Team</a></li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="600ms"><a href="#pricing">Pricing</a>
+                            </li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="700ms"><a href="#gallery">Gallery</a>
+                            </li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="800ms"><a
+                                    href="#testimonial">Testimonial</a></li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="900ms"><a href="#blog">Blog</a></li>
+                            <li class="sidebar_links wow fadeInUp" data-wow-delay="1s"><a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <footer id="navFooter">
+                        <div class="sidebar_socialIcons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+
+                        <p><i class="far fa-copyright"></i> 2020 Trax. Made With Love by Tamás :)</p>
+
+                    </footer>
+                </div>
+            </div>
+            <!-- Sidebar Ends -->
+
+        </header>
+        <section id="hero">
+            <div id="heroWrap">
+                <div id="slider-area" class="owl-carousel">
+                    <div class="heroImg1" style="background-image: url(img/banner-single-1_psd.png);">
+                        <div class="slider-text animated">
+                            <h1 data-animation-in="fadeInLeft">Simple But</h1>
+                            <h1 class="boldH1" data-animation-in="zoomIn">More Powerful</h1>
+                            <h1 data-animation-in="fadeInUp">One Page Template</h1>
+                            <div class="heroBtnWrap" data-animation-in="heartBeat"><a href="#"><button id="hero-btn"
+                                        class="button">Get
+                                        Started</button></a></div>
+                        </div>
+
+                    </div>
+                    <div class="heroImg2" style="background-image: url(img/banner-single-2.jpg);">
+                        <div class="slider-text animated">
+                            <h1>We're a Design Studio</h1>
+                            <h1>Believes In</h1>
+                            <h1 class="boldH1" data-animation-in="fadeInLeft">An Innovation</h1>
+                            <div class="heroBtnWrap" data-animation-in="zoomIn"><a href="#"><button class="button">Learn
+                                        More</button></a>
+                                <a href="#"><button class="button" id="hero-btn2" data-animation-in="heartBeat">Contact
+                                        Us</button></a></div>
+
+                        </div>
+                    </div>
+                    <div class="heroImg3" style="background-image: url(img/banner-single-3.jpg);">
+
+                        <div class="slider-text animated">
+                            <h1 data-animation-in="fadeInLeft">The Ultimate</h1>
+                            <h1 class="boldH1" data-animation-in="zoomIn">Next Big Thing</h1>
+                            <h1 data-animation-in="fadeInRight">In One Page</h1>
+                            <div class="heroBtnWrap"><a href="#"><button id="hero-btn3" class="button"
+                                        data-animation-in="heartBeat">Get
+                                        Started</button></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="business" class="wrapper">
+            <div class="container">
+                <div id="business_container">
+                    <div class="business_text title wow slideInLeft" data-wow-duration="1s" data-wow-delay="0">
+                        <div class="business">
+                            <h2>Lets take your <span>Business</span> to the next level </h2>
+                        </div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam voluptatem distinctio
+                            illum
+                            optio! Ab, doloribus mollitia cupiditate eos ea rerum.</p>
+                        <button id="businessBtn">Learn More</button>
+                    </div>
+                    <div class="business_image wow slideInRight" data-wow-duration="1s" data-wow-delay="0">
+                        <img src="img/coffee.png" alt="a cup of coffee">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="about" class="wrapper">
+            <div class="container">
+
+                <div class="wow fadeInUp" data-wow-delay="300ms" id="about-head">
+                    <span>Lorem ipsum dolor sit.</span>
+                    <h2>Our Work Process</h2>
+                </div>
+
+                <ul id="ul_container">
+                    <li class="wow fadeIn" data-wow-delay="0.3s" data-wow-duration=".5s">
+                        <span class="about_span">01</span>
+                        <p>Concept</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+                    </li>
+                    <li class="wow fadeIn" data-wow-delay="0.4s">
+                        <span class="about_span">02</span>
+                        <p>Plan</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                    </li>
+                    <li class="wow fadeIn" data-wow-delay="0.5s">
+                        <span class="about_span">03</span>
+                        <p>Design</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </li>
+                    <li class="wow fadeIn" data-wow-delay="0.6s">
+                        <span class="about_span">04</span>
+                        <p>Development</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </li>
+                    <li class="wow fadeIn" data-wow-delay="0.7s">
+                        <span class="about_span">05</span>
+                        <p>Quality Check</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </li>
+                </ul>
+
+
+            </div>
+            </div>
+        </section>
+        <section id="service" class="service wrapper">
+            <div class="container">
+                <div class="serviceHeadingContainer">
+                    <div class="service_heading wow fadeInUp" data-wow-delay="300ms" data-wow-duration=".5s">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                        <h2>Mobile App Designs</h2>
+                    </div>
+
+                    <div class="serviceHeadText wow fadeInRight" data-wow-delay="300ms" data-wow-duration=".5s">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora minima nostrum nobis
+                            ratione
+                            voluptatibus. Nam corrupti eligendi repellat quia minus.</p>
+                    </div>
+                </div>
+                <div class="srvInnerContainer">
+                    <div class="serviceText_left">
+                        <div class="wow fadeInLeft" data-wow-delay="300ms" data-wow-duration=".5s">
+                            <div class="service_icon"><i class="fas fa-cog"></i></div>
+                            <span>Theme Options</span>
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+                            </p>
+                        </div>
+                        <div class="wow fadeInLeft" data-wow-delay="350ms" data-wow-duration=".5s">
+                            <div class="service_icon"><i class="fas fa-edit"></i></div>
+                            <span>Customization</span>
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="srvImgContainer">
+                        <div id="owl_three" class="owl-carousel owl-theme owl-loaded owl-drag">
+                            <div class="item"><img src="img/iphone-slide1.jpg" alt=""></div>
+                            <div class="item"><img src="img/iphone-slide2.jpg" alt=""></div>
+                            <div class="item"><img src="img/iphone-slide3.jpg" alt=""></div>
+                        </div>
+                        <img src="img/iphone.png" alt="iphone">
+                    </div>
+                    <div class="serviceText_right">
+                        <div class="wow fadeInRight" data-wow-delay="300ms" data-wow-duration=".5s">
+                            <div class="service_icon"><i class="fas fa-code"></i></div>
+                            <span>Powerful Code</span>
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+                            </p>
+                        </div>
+                        <div class="wow fadeInRight" data-wow-delay="400ms" data-wow-duration=".5s">
+                            <div class="service_icon"><i class="far fa-folder"></i></div>
+                            <span>Documentation</span>
+                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="counters_section" class="wrapper">
+            <div class="container">
+                <div class="counter_wrapper">
+                    <div class="counters">
+                        <span id="first_counter" class="numscroller" data-min="1" data-max="2010" data-delay="3"
+                            data-increment="4">2010</span>
+                        <h3>Since We Started</h3>
+                    </div>
+                    <div class="counter_text">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est omnis recusandae, placeat sunt
+                            magni
+                            assumenda dolorem quia alias. </p>
+                    </div>
+                    <div class="counters">
+                        <span class="numscroller" data-min="1" data-max="895" data-delay="5"
+                            data-increment="3">895</span>
+                        <h3>Since We Started</h3>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="team">
+            <div class="container">
+                <div class="team_heading wrapper">
+                    <div class="teamHeadingLeft"><span>Lorem ipsum dolor sit.</span>
+                        <h2>Meet Our Experts</h2>
+                    </div>
+                    <div class="teamHeadingRight">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda cum quisquam qui tenetur
+                            rem,
+                            deserunt
+                            voluptatum ipsa voluptate perspiciatis quia animi! Quibusdam eaque eligendi vero?</p>
+                    </div>
+                </div>
+                <div id="owl-one" class="owl-carousel owl-loaded owl-drag">
+
+                    <div class="item">
+                        <img src="img/team-1.jpg" alt="members of our team">
+                        <div class="team_text">
+                            <h4>Mézga Géza</h4>
+                            <p>Rocket scientist</p>
+                            <div class="teamIcons">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/team-2.jpg" alt="members of our team">
+                        <div class="team_text">
+                            <h4>micimackó</h4>
+                            <p>food control</p>
+                            <div class="teamIcons">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/team-5.jpg" alt="members of our team">
+                        <div class="team_text">
+                            <h4>Ő itt Csimpi</h4>
+                            <p>agency owner</p>
+                            <div class="teamIcons">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/team-4.jpg" alt="members of our team">
+                        <div class="team_text">
+                            <h4>Rozi néni</h4>
+                            <p>takaritónő</p>
+                            <div class="teamIcons">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing -->
+        <section id="pricing" class="wrapper">
+            <div class="container">
+                <div class="pricing_heading">
+                    <span>Lorem ipsum dolor sit.</span>
+                    <h2>Pricing Offers</h2>
+                    <div class="toggle_wrapper">
+                        <span id="month_btn" class="toggle_button btn-active">Monthly</span>
+                        <span id="year_btn" class="toggle_button">Yearly</span>
+                    </div>
+                </div>
+                <div id="owl-two" class="owl-carousel owl-loaded owl-drag">
+                    <div class="item priceBox">
+                        <h3 class="changeColor">Basic</h3>
+                        <p>The standard version</p>
+                        <div class="price chageColor"><span class="priceNum">$9.95</span>/ <span
+                                class="priceDur">month</span>
+                        </div>
+                        <ul class="changeColor">
+                            <li>Support forum</li>
+                            <li>Free hosting</li>
+                            <li class="notInc">40MB of storage space</li>
+                            <li class="notInc">Social media integration</li>
+                            <li class="notInc">10GB of storage space</li>
+                        </ul>
+                        <a href=""><button class=button changeColor>Choose Plan</button></a>
+                    </div>
+                    <div class="item priceBox">
+                        <h3>Popular</h3>
+                        <p>The standard version</p>
+                        <div class="price"><span class="priceNum">$19.95</span>/<span class="priceDur">month</span>
+                        </div>
+                        <ul>
+                            <li>Support forum</li>
+                            <li>Free hosting</li>
+                            <li>40MB of storage space</li>
+                            <li class="notInc">Social media integration</li>
+                            <li class="notInc">10GB of storage space</li>
+                        </ul>
+                        <a href=""><button class=button changeColor>Choose Plan</button></a>
+                    </div>
+                    <div class="item priceBox">
+                        <h3>Enterprise</h3>
+                        <p>The standard version</p>
+                        <div class="price"><span class="priceNum">$29.95</span>/ <span class="priceDur">month</span>
+                        </div>
+                        <ul>
+                            <li>Support forum</li>
+                            <li>Free hosting</li>
+                            <li>40MB of storage space</li>
+                            <li>Social media integration</li>
+                            <li class="notInc">10GB of storage space</li>
+                        </ul>
+                        <a href=""><button class=button changeColor>Choose Plan</button></a>
+                    </div>
+                    <div class="item priceBox">
+                        <h3>Ultimate</h3>
+                        <p>The standard version</p>
+                        <div class="price"><span class="priceNum">$49.95</span>/ <span class="priceDur">month</span>
+                        </div>
+                        <ul>
+                            <li>Support forum</li>
+                            <li>Free hosting</li>
+                            <li>40MB of storage space</li>
+                            <li>Social media integration</li>
+                            <li>10GB of storage space</li>
+                        </ul>
+                        <a href=""><button class=button changeColor>Choose Plan</button></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Gallery -->
+        </section>
+        <section id="gallery" class="wrapper">
+            <div class="container">
+                <div class="galleryHeading">
+                    <span>Explore</span>
+                    <h2>Our Gallery</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt eius rem illo
+                        doloremque
+                        hic.
+                    </p>
+                </div>
+                <div class="galleryLinks">
+                    <div data-filter="*" class="cbp-filter-item"><span>All </span></div>
+                    <div data-filter=".digital" class="cbp-filter-item"><span> Digital</span></div>
+                    <div data-filter=".design" class="cbp-filter-item"><span> Design</span></div>
+                    <div data-filter=".brand" class="cbp-filter-item"><span> Brand</span></div>
+                    <div data-filter=".graphics" class="cbp-filter-item"><span> Graphics</span></div>
+                </div>
+                <div id="grid-container">
+                    <div class="cbp-item brand graphics"><a href="#"><img src="img/gallery-1.jpg" alt="alt"></a></div>
+                    <div class="cbp-item digital brand graphics design"><a href="#"><img src="img/gallery-4.jpg"
+                                alt="alt"></a></div>
+                    <div class="cbp-item design digital graphics"><a href="#"><img src="img/gallery-7.jpg"
+                                alt="alt"></a>
+                    </div>
+                    <div class="cbp-item brand graphics"><a href="#"><img src="img/gallery-11.jpg" alt="alt"></a></div>
+                    <div class="cbp-item brand graphics design design"><a href="#"><img src="img/gallery-2.jpg"
+                                alt="alt"></a></div>
+                    <div class="cbp-item brand digital design"><a href="#"><img src="img/gallery-9.jpg" alt="alt"></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- Partners Slider -->
+        <section id="partners" class="wrapper">
+            <div class="container">
+                <div class="partners_container">
+                    <div id="owl_four" class="owl-carousel owl-loaded owl-drag">
+                        <img src="img/logo-1.png" alt="our logo">
+                        <img src="img/logo-1.png" alt="our logo">
+                        <img src="img/logo-1.png" alt="our logo">
+                        <img src="img/logo-1.png" alt="our logo">
+                        <img src="img/logo-1.png" alt="our logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial -->
+        <section id="testimonial" class="wrapper">
+            <div class="paraHead">
+                <div class="container">
+                    <div class="testimonialHeading">
+                        <span>
+                            Lorem ipsum dolor sit.</span>
+                        <h2>What People Say</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="caroWrap">
+                    <div id="owl_five" class="owl-carousel owl-drag">
+
+                        <div class="firstPic item">
+                            <div class="fellaBox"><img src="img/testimonial-1.jpg" alt="'fags">
+                                <h4>John Smith</h4>
+                                <span>UPWORK, New York</span>
+                            </div>
+                            <div class="testi_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro culpa sit accusantium
+                                    nisi
+                                    rerum
+                                    architecto consequatur officia id vel sint. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quae, voluptates? </p>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="firstPic item">
+                            <div class="fellaBox"><img src="img/testimonial-2.jpg" alt="'fags">
+                                <h4>Gép Elek</h4>
+                                <span>ARATÓPUSZTA, Borsod</span>
+                            </div>
+                            <div class="testi_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro culpa sit accusantium
+                                    nisi
+                                    rerum
+                                    architecto consequatur officia id vel sint. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quae, voluptates?</p>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="firstPic item">
+                            <div class="fellaBox"><img src="img/testimonial-3.jpg" alt="'fags">
+                                <h4>Batman</h4>
+                                <span>GOTHAM, Rooftops</span>
+                            </div>
+                            <div class="testi_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro culpa sit accusantium
+                                    nisi
+                                    rerum
+                                    architecto consequatur officia id vel sint. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quae, voluptates?</p>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="firstPic item">
+                            <div class="fellaBox"><img src="img/testimonial-4.jpg" alt="'fags">
+                                <h4>Nem Batman</h4>
+                                <span>NOHAM, Toproofs</span>
+                            </div>
+                            <div class="testi_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro culpa sit accusantium
+                                    nisi
+                                    rerum
+                                    architecto consequatur officia id vel sint. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quae, voluptates?</p>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="video">
+            <div class="videoContainer">
+                <div class="videoFlex">
+
+                    <div class="videoText">
+                        <h2>A Creative Design Agency In East London</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quis porro ex? Rem, quae
+                            modi! Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                    <div class="vidImgCont">
+                        <a class="playBtn" href="#"><i class="fas fa-play "></i></a>
+                        <img src="img/bg-video-section.jpg" alt="fella in green shirt">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog -->
+        <section id="blog" class="wrapper">
+            <div class="container">
+                <div class="blogHead">
+                    <span>Read Our</span>
+                    <h2>Latest Blog</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos magnam labore voluptatibus
+                        voluptate
+                        ipsa, pariatur blanditiis odit aliquam eaque distinctio. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Eveniet, molestiae.</p>
+                </div>
+                <div class="blogBoxContainer">
+                    <div class="blogBox">
+                        <img src="https://picsum.photos/1920/1080?random=1" alt="">
+                        <div class="blogInnerText">
+                            <h4>Lorem ipsum dolor sit.</h4>
+                            <div class="blogIcons">
+                                <a href=""><i class="fas fa-calendar-alt"></i> Jan 14</a>
+                                <a href=""><i class="far fa-user"></i>Jóska</a>
+                                <a href=""><i class="far fa-comment-dots"></i>3</a>
+                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been the industry's standard dummy text ever since the 1500s.</p>
+                            <a href="" class="btn-gradient">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blogBox">
+                        <img src="https://picsum.photos/1920/1080?random=2" alt="">
+                        <div class="blogInnerText">
+                            <h4>Lorem ipsum dolor sit.</h4>
+                            <div class="blogIcons">
+                                <a href=""><i class="fas fa-calendar-alt"></i></a>
+                                <a href=""><i class="far fa-user"></i>Pista</a>
+                                <a href=""><i class="far fa-comment-dots"></i>5</a>
+                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been the industry's standard dummy text ever since the 1500s.</p>
+                            <a href="" class="btn-gradient">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="blogBox">
+                        <img src="https://picsum.photos/1920/1080?random=3" alt="">
+                        <div class="blogInnerText">
+                            <h4>Lorem ipsum dolor sit.</h4>
+                            <div class="blogIcons">
+                                <a href=""><i class="fas fa-calendar-alt"></i></a>
+                                <a href=""><i class="far fa-user"></i>Bendegúz</a>
+                                <a href=""><i class="far fa-comment-dots"></i>7</a>
+                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been the industry's standard dummy text ever since the 1500s. lorem20 </p>
+                            <a href="#" class="btn-gradient">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="wrapper">
+
+                    <div class="cntContainer">
+                        <div class="cntTitle">
+                            <h2>Contact Us</h2>
+                            <div class="cntTitleText">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia reiciendis delectus
+                                    suscipit
+                                    culpa!
+                                    Quo, nisi.</p>
+                            </div>
+                        </div>
+                        <div class="cntInfoText">
+                            <span>Trax Agency Worldwide</span>
+                            <h2>Agency Office</h2>
+                            <p>Address: 309, New Cavendish St, EC1Y 3WK</p>
+                            <p>0800 214 5252</p>
+                            <p>polpo@traxagency.co.au</p>
+                            <p>Mon-Fri: 9am-5pm</p>
+                            <div class="cntIcons">
+                                <ul>
+                                    <li><i class="fab fa-facebook"></i></li>
+                                    <li><i class="fab fa-twitter"></i></li>
+                                    <li><i class="fab fa-linkedin"></i></li>
+                                    <li><i class="fab fa-instagram"></i></li>
+                                    <li><i class="fab fa-whatsapp"></i></li>
+                                    <li><i class="far fa-envelope"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cntForm">
+                            <div class="formInput">
+                                <label for="nameInput"><input id="nameInput" type="text" placeholder="Name:"></label>
+                            </div>
+                            <div class="formInput">
+                                <label for="emailInput"><input id="emailInput" type="email" placeholder="Email:"
+                                        required></label></div>
+                            <label for="textarea"><textarea id="textarea" cols="30" rows="10"
+                                    placeholder="Massage:"></textarea></label>
+                            <button class="btn-gradient" type="submit">Send</button>
+                        </div>
+                    </div>
+                    <div class="cntBoxWrapper">
+                        <div class="cntBox">
+                            <span>
+                                <i class="fas fa-mobile-alt"></i>
+                                <p>+14046000396</p>
+                                <p>+43720778972</p>
+                            </span>
+                        </div>
+                        <div class="cntBox">
+                            <span>
+                                <i class="fas fa-map-marker-alt"></i></span>
+                            <p>123 Street NYC , USA</p>
+                            <p>123 Street New Yolo , Austria</p>
+
+                        </div>
+                        <div class="cntBox">
+                            <span>
+                                <i class="fas fa-envelope"></i></span>
+                            <p>admin@website.com</p>
+                            <p>email@website.com</p>
+
+                        </div>
+                        <div class="cntBox">
+                            <span>
+                                <i class="far fa-clock"></i> </span>
+                            <p>UTC−05:00</p>
+                            <p>UTC+01:00</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Contact US -->
+        <section id="contactUs">
+            <div class="container">
+                <div class="cntUsWrapper">
+                    <h3>Stay Connected</h3>
+                    <form action="#">
+                        <div class="formLeft">
+                            <div class="formInput">
+                                <label for="nameInput2"><input id="nameInput2" type="text" placeholder="First Name:"
+                                        required>
+                                </label>
+                            </div>
+                            <div class="formInput">
+                                <label for="cmpInput"><input id="cmpInput" type="text" placeholder="Company Name">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="formRight">
+                            <div class="formInput">
+                                <label for="emailInput2"><input id="emailInput2" type="email" placeholder="Email:"
+                                        required></label>
+                            </div>
+                    </form>
+                    <button type="submit" class="button" id="cntUsBtn">Subscribe</button>
+                </div>
+            </div>
+
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer id="main_footer">
+            <div class="container">
+                <div class="footerWrap">
+                    <div class="upLeft footBox">
+                        <div class="footImgBox">
+                            <img src="img/logo-transparent.png" alt="">
+                        </div>
+                        <p>Lorem ipsum, dolor sit adipisicing elit. Accusantium tempora itaque eum
+                            commodi veritatis rerum?</p>
+                        <div class="iContact">
+                            <div><i class="fas fa-mobile-alt"></i></div>
+                            <div class="footCont">
+                                <p>+01-123-4567</p>
+                                <a href="#">web@support.co.uk</a>
+                            </div>
+
+                        </div>
+                        <ul>
+                            <li><i class="fab fa-facebook-f"></i></li>
+                            <li><i class="fab fa-twitter"></i></li>
+                            <li><i class="fab fa-linkedin-in"></i></li>
+                            <li><i class="fab fa-instagram"></i></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="upRight footBox">
+                        <h3>Latest News</h3>
+                        <ul>
+                            <li><a href="">Lorem ipsum dolor sit....</a>
+                                <span>29th February 2020</span></li>
+                            <li><a href="">Lorem ipsum dolor sit....</a>
+                                <span>29th February 2020</span></li>
+                            <li><a href="">Lorem ipsum dolor sit....</a>
+                                <span>29th February 2020</span></li>
+                        </ul>
+                    </div>
+                    <div class="downLeft footBox">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href=""> Home</a></li>
+                            <li><a href=""> About Us</a></li>
+                            <li><a href=""> Latest News</a></li>
+                            <li><a href=""> Business Planning</a></li>
+                            <li><a href=""> Contact Us</a></li>
+                            <li><a href=""> Faq's</a></li>
+                        </ul>
+                    </div>
+                    <div class="downRight footBox">
+                        <h3>Business hours</h3>
+                        <p>Our support available to help you 24 hours a day, seven days week
+
+                        </p>
+                        <ul>
+                            <li><span>Monday-Saturday:</span><span>8.00-18.00</span></li>
+                            <li><span>Friday</span><span>09:00-21:00
+                                </span></li>
+                            <li><span>Sunday</span><span>09:00-20:00
+                                </span></li>
+                            <li><span>Calendar Events:</span><span>24-Hour Shift
+                                </span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div id="template"><span>
+                    Ruander Oktatóközpont webszerkesztés - Project Munka </span><a
+                    href="https://themesindustry.com/html/trax-2020/index-one-page.html" target="_blank">kiinduló
+                    sablon</a>
+            </div>
+        </footer>
+        <script src="https://kit.fontawesome.com/68475cd183.js" crossorigin="anonymous"></script>
+
+        <!-- Jquery-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+            </script>
+        <!-- Owl Carousel -->
+        <script src="JS/owl.carousel.js"></script>
+        <script src="JS/owl_settings.js"></script>
+        <!-- Counters -->
+        <script src="JS/numscroller-1.0.js"></script>
+        <!-- WoW JS - animations on scroll -->
+        <script src="JS/wow.min.js"></script>
+        <script>
+            new WOW().init()
+        </script>
+        <!-- Own scripting -->
+        <script src="JS/script.js"></script>
+
+        <!-- Fancybox -->
+        <script src="JS/jquery.fancybox.min.js"></script>
+        <script>
+            $('[data-fancybox="gallery"]').fancybox({
+
+            });
+        </script>
+        <script src="JS/jquery.cubeportfolio.min.js"></script>
+        <script type="text/javascript">
+
+        </script>
+
+    </body>
+
+</html>
