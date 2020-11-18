@@ -15,7 +15,9 @@ function open_menu() {
 function close_menu() {
   let sideMenu = document.querySelector(".sideMenu");
   sideMenu.classList.remove("side-active");
+ 
 };
+
 /* ----Sidebar menu button ENDS---- */
 /* ----Gallery grid---- */
 $(document).ready(function () {
@@ -82,7 +84,7 @@ $(document).ready(function (){
          if (round < 1) {
            round++
          } else {
-          console.log("válámi ném jó tezsvír")
+          console.log("Something happend on HERO carousel, don't worry about this, autoplay fucks it up")
          }
        }
    });
@@ -94,55 +96,46 @@ $(document).ready(function (){
  $('#owl-one').owlCarousel({
    loop: true,
    margin: 0,
- 
+  
    responsiveClass: true,
    responsive: {
      0: {
        items: 1,
-       nav: false
      },
      545: {
        items: 2,
-       nav: false
      },
      768: {
        items: 3,
-       nav: false,
-       loop: false
      },
      1199: {
        items: 4,
-       nav: false,
      }
    }
- })
+ });
  /* ---- Team Slider ENDS ---- */
  /* ---- Pricing Slider ---- */
  $('#owl-two').owlCarousel({
    loop: false,
    margin: 40,
    stagePadding: 20,
-   nav: false,
+   autoplay: true,
+   autoplaySpeed:500,
+   dots:false,
    responsiveClass: true,
    
    responsive: {
      0: {
        items: 1,
-       
      },
      768: {
-       items: 2,
-       
+       items: 2,      
      },
      997: {
        items: 3,
-     },
-     1199:{
-       items:4,
      }
- 
    }
- })
+ });
  /* ---- Pricing Slider ENDS ---- */
  /* ---- Service Slider ---- */
  $('#owl_three').owlCarousel({
@@ -151,6 +144,8 @@ $(document).ready(function (){
    animateOut: 'fadeOut',
    animateIn: 'fadeIn',
    dots: false,
+   autoplay: true,
+   autoplaySpeed: 500,
    mouseDrag: true,
    touchDrag: true,
    responsive: {
@@ -164,7 +159,7 @@ $(document).ready(function (){
        items: 1,
      },
    }
- })
+ });
  /* ---- Service Slider ENDS ---- */
  /* ---- Partners Slider ---- */
  $('#owl_four').owlCarousel({
@@ -173,6 +168,8 @@ $(document).ready(function (){
    mouseDrag: true,
    touchDrag: true,
    autoplay: true,
+   nav: false,
+   dots: false,
    autoplaySpeed: 1000,
    autoplayTimeout: 5000,
    responsive : {
@@ -192,9 +189,10 @@ $(document).ready(function (){
        items: 5
    },
  }
+});
  /* ---- Partners Slider ENDS ---- */
  /* ---- Testimonial Slider ---- */
- })
+ 
  $('#owl_five').owlCarousel({
    loop: true,
    mousedrag: true,
@@ -202,13 +200,58 @@ $(document).ready(function (){
    autoplay: true,
    items: 1,
    nav: false,
+   dots: false,
    animatein: 'fadeIn',
    animateOut: 'fadeOut',
    
  })
  /* ---- Testimonial Slider ENDS ---- */
+ /* ---- Fancybox call ---- */
+  $('[data-fancybox="gallery"]').fancybox({
+
+});
  
 
+/* ---- Pricing Value Changer ---- */
+            // Igen tudom hogy ez így elég noob, de az array nélkül nem akar működni, hiába van változóba akkor sem... "sad panda"
+            const monthly = document.getElementById('month_btn');
+            const yearly = document.getElementById('year_btn');
 
-
-
+            yearly.addEventListener('click', () => {
+                document.getElementsByClassName('priceNum')[0].innerHTML = "$89.55";
+                document.getElementsByClassName('priceNum')[1].innerHTML = "$179.55";
+                document.getElementsByClassName('priceNum')[2].innerHTML = "$269.55";
+                document.getElementsByClassName('priceNum')[3].innerHTML = "$449.55";
+                document.getElementsByClassName('priceDur')[0].innerHTML = "Year"
+                document.getElementsByClassName('priceDur')[1].innerHTML = "Year"
+                document.getElementsByClassName('priceDur')[2].innerHTML = "Year"
+                document.getElementsByClassName('priceDur')[3].innerHTML = "Year"
+                if (monthly.classList.contains('btn-active')) {
+                    monthly.classList.remove('btn-active');
+                    yearly.classList.add('btn-active');
+                }
+                else {
+                  console.log("something isn't right with Pricing")
+                }
+            });
+            monthly.addEventListener('click', () => {
+                document.getElementsByClassName('priceNum')[0].innerHTML = "$9.55";
+                document.getElementsByClassName('priceNum')[1].innerHTML = "$19.95";
+                document.getElementsByClassName('priceNum')[2].innerHTML = "$29.95";
+                document.getElementsByClassName('priceNum')[3].innerHTML = "$49.95";
+                document.getElementsByClassName('priceDur')[0].innerHTML = "month"
+                document.getElementsByClassName('priceDur')[1].innerHTML = "month"
+                document.getElementsByClassName('priceDur')[2].innerHTML = "month"
+                document.getElementsByClassName('priceDur')[3].innerHTML = "month"
+                if (yearly.classList.contains('btn-active')) {
+                    yearly.classList.remove('btn-active');
+                    monthly.classList.add('btn-active');
+                }
+                else {
+                  console.log("something isn't right with Pricing")
+                }
+            });
+            /* wow initialization */
+            new WOW().init()
+          
+ 

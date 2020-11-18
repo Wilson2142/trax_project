@@ -127,6 +127,7 @@ h6 {
     outline: none;
     border: 1px solid transparent;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 }
 
 .btn-gradient:hover {
