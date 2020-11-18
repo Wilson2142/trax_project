@@ -982,6 +982,8 @@ header {
     align-items: center;
 }
 
+
+
 .testi_text span {
     color: #ffc13c;
     cursor: pointer;
@@ -1471,7 +1473,7 @@ footer a {
 
     .testi_text {
         flex: 0 0 40%;
-        margin-top: 20px;
+        margin-top: 90px;
     }
 
     .testimonialHeading {
@@ -1482,11 +1484,6 @@ footer a {
     .firstPic {
         flex-flow: row nowrap;
         justify-content: space-around;
-    }
-
-    .testi_text {
-        flex: 0 0 40%;
-        margin-top: 20px;
     }
 
     .testimonialHeading {
@@ -1558,6 +1555,10 @@ footer a {
 
     .footBox {
         flex: 0 0 25%;
+    }
+
+    #contact .btn-gradient {
+        margin-top: 20px;
     }
 
 }
