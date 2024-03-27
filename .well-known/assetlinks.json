@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "hu.eu_solar.mobile",
+    "sha256_cert_fingerprints":
+    ["C9:A4:2F:3B:87:56:63:9C:7F:F1:2E:3D:50:56:56:07:7C:C6:E6:E1:79:0B:F1:F9:70:2D:84:F9:07:CE:23:C7"]
+  }
+}]
